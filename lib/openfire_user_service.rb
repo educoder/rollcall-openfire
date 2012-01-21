@@ -1,4 +1,4 @@
-module OpenfireUserService
+module OpenFireUserService
   def create_account_in_openfire
     unless @openfire_account_created
       openfire_userservice_request('add',

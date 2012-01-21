@@ -2,12 +2,8 @@ require 'rest_client'
 require 'uri'
 require 'account'
 
-OPENFIRE_USERSERVICE_URL = "http://proto.encorelab.org:9090/plugins/accountService/userservice"
-OPENFIRE_USERSERVICE_SECRET = "encores3encore"
-OPENFIRE_ROLLCALL_GROUP = "rollcall"
-
 Account.class_eval do
-  include OpenfireUserService
+  include OpenFireUserService
   
   before_validation :create_account_in_openfire, :on => :create
   before_validation :update_account_in_openfire, :on => :update
